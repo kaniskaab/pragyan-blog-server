@@ -3,6 +3,7 @@ const dbConnect = require("./config/config");
 // const error = require("./errorHandler/handle_error")
 const express = require("express");
 const cors=require("cors")
+const paymentRoutes=require("./controllers.js/Payment")
 //dynamically linking a port 
 const dotenv = require("dotenv").config();
 const port = process.env.PORT;
@@ -18,7 +19,7 @@ app.use("/", require("./controllers.js/Feedback"));
 app.use("/", require("./controllers.js/CorporateWellness"));
 app.use("/", require("./controllers.js/Contact"));
 app.use("/", require("./controllers.js/Footer"));
-
+app.use("/api/payment/",paymentRoutes);
 
 
 
